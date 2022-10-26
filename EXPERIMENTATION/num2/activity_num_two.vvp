@@ -1,0 +1,123 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_011A7A28 .scope module, "combi_circuit" "combi_circuit" 2 1;
+ .timescale 0 0;
+L_011ACFD0 .functor AND 1, v00FF08F0_0, v00FF0BB0_0, C4<1>, C4<1>;
+L_011AD238 .functor AND 1, v00FF08F0_0, v00FF0948_0, C4<1>, C4<1>;
+L_011AD270 .functor OR 1, L_011ACFD0, L_011AD238, C4<0>, C4<0>;
+L_011ACF60 .functor OR 1, v00FF0948_0, L_00FF0F78, C4<0>, C4<0>;
+L_011AD040 .functor OR 1, L_00FF0B00, v00FF08F0_0, C4<0>, C4<0>;
+L_011AD078 .functor AND 1, L_011ACF60, L_011AD040, C4<1>, C4<1>;
+L_011AD158 .functor OR 1, L_011AD270, L_011AD078, C4<0>, C4<0>;
+v011A8BE8_0 .net *"_s0", 0 0, L_011ACFD0; 1 drivers
+v011A32C8_0 .net *"_s11", 0 0, L_00FF0B00; 1 drivers
+v011A3320_0 .net *"_s12", 0 0, L_011AD040; 1 drivers
+v011A3378_0 .net *"_s14", 0 0, L_011AD078; 1 drivers
+v011AB748_0 .net *"_s16", 0 0, L_011AD158; 1 drivers
+v011AB7A0_0 .net *"_s2", 0 0, L_011AD238; 1 drivers
+v011AB7F8_0 .net *"_s4", 0 0, L_011AD270; 1 drivers
+v00FF0C08_0 .net *"_s7", 0 0, L_00FF0F78; 1 drivers
+v00FF0C60_0 .net *"_s8", 0 0, L_011ACF60; 1 drivers
+v00FF08F0_0 .var "a", 0 0;
+v00FF0BB0_0 .var "b", 0 0;
+v00FF0948_0 .var "c", 0 0;
+v00FF0CB8_0 .var "d", 0 0;
+v00FF1028_0 .net "y", 0 0, L_00FF0DC0; 1 drivers
+L_00FF0F78 .reduce/nor v00FF0948_0;
+L_00FF0B00 .reduce/nor v00FF0CB8_0;
+L_00FF0DC0 .reduce/nor L_011AD158;
+    .scope S_011A7A28;
+T_0 ;
+    %vpi_call 2 10 "$dumpfile", "activity_num_two.vcd";
+    %vpi_call 2 11 "$dumpvars", 1'sb0, S_011A7A28;
+    %set/v v00FF08F0_0, 0, 1;
+    %set/v v00FF0BB0_0, 0, 1;
+    %set/v v00FF0948_0, 0, 1;
+    %set/v v00FF0CB8_0, 0, 1;
+    %delay 1, 0;
+    %set/v v00FF08F0_0, 0, 1;
+    %set/v v00FF0BB0_0, 0, 1;
+    %set/v v00FF0948_0, 0, 1;
+    %set/v v00FF0CB8_0, 1, 1;
+    %delay 1, 0;
+    %set/v v00FF08F0_0, 0, 1;
+    %set/v v00FF0BB0_0, 0, 1;
+    %set/v v00FF0948_0, 1, 1;
+    %set/v v00FF0CB8_0, 0, 1;
+    %delay 1, 0;
+    %set/v v00FF08F0_0, 0, 1;
+    %set/v v00FF0BB0_0, 0, 1;
+    %set/v v00FF0948_0, 1, 1;
+    %set/v v00FF0CB8_0, 1, 1;
+    %delay 1, 0;
+    %set/v v00FF08F0_0, 0, 1;
+    %set/v v00FF0BB0_0, 1, 1;
+    %set/v v00FF0948_0, 0, 1;
+    %set/v v00FF0CB8_0, 0, 1;
+    %delay 1, 0;
+    %set/v v00FF08F0_0, 0, 1;
+    %set/v v00FF0BB0_0, 1, 1;
+    %set/v v00FF0948_0, 0, 1;
+    %set/v v00FF0CB8_0, 1, 1;
+    %delay 1, 0;
+    %set/v v00FF08F0_0, 0, 1;
+    %set/v v00FF0BB0_0, 1, 1;
+    %set/v v00FF0948_0, 1, 1;
+    %set/v v00FF0CB8_0, 0, 1;
+    %delay 1, 0;
+    %set/v v00FF08F0_0, 0, 1;
+    %set/v v00FF0BB0_0, 1, 1;
+    %set/v v00FF0948_0, 1, 1;
+    %set/v v00FF0CB8_0, 1, 1;
+    %delay 1, 0;
+    %set/v v00FF08F0_0, 1, 1;
+    %set/v v00FF0BB0_0, 0, 1;
+    %set/v v00FF0948_0, 0, 1;
+    %set/v v00FF0CB8_0, 0, 1;
+    %delay 1, 0;
+    %set/v v00FF08F0_0, 1, 1;
+    %set/v v00FF0BB0_0, 0, 1;
+    %set/v v00FF0948_0, 0, 1;
+    %set/v v00FF0CB8_0, 1, 1;
+    %delay 1, 0;
+    %set/v v00FF08F0_0, 1, 1;
+    %set/v v00FF0BB0_0, 0, 1;
+    %set/v v00FF0948_0, 1, 1;
+    %set/v v00FF0CB8_0, 0, 1;
+    %delay 1, 0;
+    %set/v v00FF08F0_0, 1, 1;
+    %set/v v00FF0BB0_0, 0, 1;
+    %set/v v00FF0948_0, 1, 1;
+    %set/v v00FF0CB8_0, 1, 1;
+    %delay 1, 0;
+    %set/v v00FF08F0_0, 1, 1;
+    %set/v v00FF0BB0_0, 1, 1;
+    %set/v v00FF0948_0, 0, 1;
+    %set/v v00FF0CB8_0, 0, 1;
+    %delay 1, 0;
+    %set/v v00FF08F0_0, 1, 1;
+    %set/v v00FF0BB0_0, 1, 1;
+    %set/v v00FF0948_0, 0, 1;
+    %set/v v00FF0CB8_0, 1, 1;
+    %delay 1, 0;
+    %set/v v00FF08F0_0, 1, 1;
+    %set/v v00FF0BB0_0, 1, 1;
+    %set/v v00FF0948_0, 1, 1;
+    %set/v v00FF0CB8_0, 0, 1;
+    %delay 1, 0;
+    %set/v v00FF08F0_0, 1, 1;
+    %set/v v00FF0BB0_0, 1, 1;
+    %set/v v00FF0948_0, 1, 1;
+    %set/v v00FF0CB8_0, 1, 1;
+    %delay 1, 0;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "activity_num_two.v";
